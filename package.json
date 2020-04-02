@@ -3,18 +3,21 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node server.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "postinstall": "ng build --aot -prod"
   },
   "private": true,
   "dependencies": {
     "@angular/animations": "~9.1.0-rc.1",
     "@angular/cdk": "^9.2.0",
+    "@angular/cli": "^9.1.0",
     "@angular/common": "~9.1.0-rc.1",
     "@angular/compiler": "~9.1.0-rc.1",
+    "@angular/compiler-cli": "^9.1.0",
     "@angular/core": "~9.1.0-rc.1",
     "@angular/forms": "^9.1.0",
     "@angular/material": "^9.2.0",
@@ -26,22 +29,26 @@
     "angular-material": "^1.1.21",
     "angular-material-autocomplete-list": "^1.1.0",
     "angular-ng-autocomplete": "^2.0.1",
+    "express": "^4.17.1",
     "md-autocomplete": "0.0.1-alpha.1",
     "ngx-mat-form-components": "^0.6.1",
     "ngx-mat-simple-autocomplete": "0.0.4",
+    "path": "^0.12.7",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
+    "typescript": "~3.8.3",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.901.0-rc.0",
-    "@angular/cli": "~9.1.0-rc.0",
-    "@angular/compiler-cli": "~9.1.0-rc.1",
+    "@angular/cli": "^9.1.0",
+    "@angular/compiler-cli": "^9.1.0",
     "@angular/language-service": "~9.1.0-rc.1",
-    "@types/node": "^12.11.1",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
+    "@types/node": "^12.11.1",
     "codelyzer": "^5.1.2",
+    "enhanced-resolve": "^3.3.0",
     "jasmine-core": "~3.5.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~4.4.1",
@@ -53,5 +60,9 @@
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
     "typescript": "~3.8.3"
+  },
+  "engines": {
+    "node": "v12.16.1",
+    "npm": "6.14.3"
   }
 }
