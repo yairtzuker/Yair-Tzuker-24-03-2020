@@ -15,15 +15,11 @@ import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { MatSelectModule } from '@angular/material/select';
-
-
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { HomeComponent } from './components/home/home.component';
 import { FavoritesComponent } from './components/favorites/favorites.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { AutoCompleteSearchComponent } from './components/auto-complete-search/auto-complete-search.component';
-import { from } from 'rxjs';
-
 
 
 const appRoutes: Routes = [
@@ -47,18 +43,12 @@ const appRoutes: Routes = [
     BrowserModule,
       RouterModule.forRoot(
         appRoutes,
-        
-       
-      ),
-    
+        ),
     AppRoutingModule,
     HttpClientModule,
     MatAutocompleteModule, MatInputModule, BrowserAnimationsModule,
     MatFormFieldModule, MatButtonModule, ReactiveFormsModule, FormsModule,MatSelectModule
   ],
-
-  
- 
   providers: [ApiService],
   bootstrap: [AppComponent]
 })
