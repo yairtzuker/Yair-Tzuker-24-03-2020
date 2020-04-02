@@ -1,0 +1,13 @@
+<div class="container" style="width: fit-content;">
+    <div class="row">
+     <div *ngFor='let city of allCities'>
+      <div class="card" style="width:200px; text-align: center;" (click)="loadThisFavorite(city)">
+        <div class="card-body">
+          <h5 class="card-title">{{city[1]}}</h5>
+          <h5 class="card-title">{{city[2].Temperature.Metric.Value}}°</h5>
+          <h5 class="card-title">{{city[2].WeatherText}}</h5>
+        </div>
+      </div>
+   </div>
+ </div>
+</div>
