@@ -6,18 +6,13 @@ import { BehaviorSubject } from "rxjs";
   providedIn: 'root'
 })
 export class ApiService {
-  
-<<<<<<< HEAD
   apikey = 'lxS8atJ1zaimcWFJyxoiRVF3A2ttUipN';
-=======
-  apikey = 'cJr9Bp9n2aoO3fjm39IhXvJYeUZLyZZ8';
->>>>>>> 89bfa5740360e5208528cf23e2eb223868c39c96
   favoritesCities: any = [];
   favoritesMap = new Map();
   favortiesCitiesCurrentWeather: any = [];
   constructor(private _httpClient: HttpClient) { }
   opts = [];
-  
+
   private changeKey = new BehaviorSubject<any>('215854');
   cityKey = this.changeKey.asObservable();
 
@@ -26,14 +21,14 @@ export class ApiService {
 
   private checkIfFavorite = new BehaviorSubject<any>('Tel Aviv');
   isFavorite = this.checkIfFavorite.asObservable();
-  
- 
-  
+
+
+
   /// get 5 Five Days Forecasts By City Api Key///
   public getfiveDaysForecasts(cityKey: string) {
      return this._httpClient.get(`http://dataservice.accuweather.com/forecasts/v1/daily/5day/${cityKey}?apikey=${this.apikey}&metric=true`);
   }
-  
+
   changeCityKey(cityKey: any) {
     this.changeKey.next(cityKey);
   }
@@ -50,7 +45,7 @@ export class ApiService {
   public getCityKey(filterValue: string) {
     return this._httpClient.get<any>(`http://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=${this.apikey}&q=`+ filterValue)
    }
-  
+
   /// get current weather of a city //
   public getCurrentWeather(cityKey: string) {
     return this._httpClient.get(`http://dataservice.accuweather.com/currentconditions/v1/${cityKey}?apikey=${this.apikey}`)
@@ -61,11 +56,11 @@ export class ApiService {
       this.favoritesMap.set(this.changeKey.value, this.changeName.value);
       this.isfavorite(this.isFavorite);
   };
-  
+
   // del city from favorties //
   public delCityFromFavorites() {
       this.favoritesMap.delete(this.changeKey.value);
       this.isfavorite(this.isFavorite);
   };
-  
+
 }
