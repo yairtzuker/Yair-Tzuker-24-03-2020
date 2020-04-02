@@ -7,7 +7,11 @@ import { BehaviorSubject } from "rxjs";
 })
 export class ApiService {
   
+<<<<<<< HEAD
   apikey = 'lxS8atJ1zaimcWFJyxoiRVF3A2ttUipN';
+=======
+  apikey = 'cJr9Bp9n2aoO3fjm39IhXvJYeUZLyZZ8';
+>>>>>>> 89bfa5740360e5208528cf23e2eb223868c39c96
   favoritesCities: any = [];
   favoritesMap = new Map();
   favortiesCitiesCurrentWeather: any = [];
